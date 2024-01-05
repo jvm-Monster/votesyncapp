@@ -1,16 +1,11 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:loader_overlay/loader_overlay.dart';
-import 'package:sizer/sizer.dart';
 import 'package:votesyncapp/stateproviders/school_state_providers.dart';
-import 'package:votesyncapp/vs_apis/school_api.dart';
 import 'package:votesyncapp/vs_apis/student_api.dart';
 import 'package:votesyncapp/vs_models/school_model.dart';
 import 'package:votesyncapp/vs_screens/login_screen.dart';
 import 'package:votesyncapp/vs_utils/api_status_codes.dart';
 import 'package:votesyncapp/vs_widgets/election_dropdown_button_widget.dart';
-import 'package:votesyncapp/vs_widgets/responsive_scale_widget.dart';
 
 import '../vs_constants/vs_constants.dart';
 import '../vs_models/student_model.dart';
@@ -82,8 +77,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                           ),
                           Consumer(builder: (context, ref, child) {
                             final watchSchoolList=ref.watch(schoolListProvider);
-                            List<String?> l = watchSchoolList!.map((e) => e.schoolName).toList();
-                            return  AppDropDownButtonWidget(listOptions:watchSchoolList,onValueChanged: (value) {
+                            return  AppDropDownButtonWidget(listOptions:watchSchoolList!,onValueChanged: (value) {
                                 selectedSchool = value;
                               // Update the selectedSchool variable whenever the value changes
                             },);

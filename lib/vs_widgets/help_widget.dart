@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:votesyncapp/vs_constants/vs_constants.dart';
 
@@ -23,7 +22,7 @@ class _HelpWidgetState extends State<HelpWidget> {
            ListTile(
              subtitle: Text(faqs[index]),
            ),
-           Divider(
+           const Divider(
              color: vsAccentColor,
            ),
          ],

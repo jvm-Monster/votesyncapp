@@ -1,4 +1,3 @@
-import 'package:votesyncapp/vs_models/school_model.dart';
 
 class Election {
   String electionEndDate;

@@ -1,10 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:votesyncapp/vs_constants/vs_constants.dart';
 import 'package:votesyncapp/vs_widgets/appbar_titile_widget.dart';
 import 'package:votesyncapp/vs_widgets/help_widget.dart';
 import 'package:votesyncapp/vs_widgets/responsive_scale_widget.dart';
-import 'package:votesyncapp/vs_widgets/vs_searchbar_widget.dart';
 
 class HelpScreen extends StatefulWidget {
   const HelpScreen({super.key});

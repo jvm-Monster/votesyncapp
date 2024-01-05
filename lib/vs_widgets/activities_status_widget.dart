@@ -1,8 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:responsive_framework/responsive_breakpoints.dart';
-import 'package:responsive_framework/responsive_framework.dart';
 import 'package:votesyncapp/stateproviders/election_type_state_notifier.dart';
 import 'package:votesyncapp/vs_constants/vs_constants.dart';
 import 'package:votesyncapp/vs_models/election_model.dart';

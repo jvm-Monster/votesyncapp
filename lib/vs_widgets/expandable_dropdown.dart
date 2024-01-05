@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ExpandableDropdown extends StatefulWidget {
@@ -20,11 +19,11 @@ class _ExpandableDropdownState extends State<ExpandableDropdown> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text('Dropdown Title', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-        SizedBox(height: 10),
+        const Text('Dropdown Title', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+        const SizedBox(height: 10),
         ExpansionPanelList(
           elevation: 1,
-          expandedHeaderPadding: EdgeInsets.all(0),
+          expandedHeaderPadding: const EdgeInsets.all(0),
           expansionCallback: (int index, bool isExpanded) {
             setState(() {
               items[index].isExpanded = !isExpanded;
@@ -38,7 +37,7 @@ class _ExpandableDropdownState extends State<ExpandableDropdown> {
                 );
               },
               body: Container(
-                padding: EdgeInsets.all(15.0),
+                padding: const EdgeInsets.all(15.0),
                 child: Text('Additional information for ${item.value}'),
               ),
               isExpanded: item.isExpanded,

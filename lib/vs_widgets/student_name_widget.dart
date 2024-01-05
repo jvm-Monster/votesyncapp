@@ -1,12 +1,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:votesyncapp/vs_models/school_model.dart';
 
 import '../stateproviders/student_state_notifier.dart';
-import '../vs_apis/student_api.dart';
-import '../vs_constants/vs_constants.dart';
-import '../vs_models/student_model.dart';
 int i=0;
 
 class StudentInfoWidget{

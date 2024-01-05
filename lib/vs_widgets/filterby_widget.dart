@@ -1,10 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:votesyncapp/main.dart';
 import 'package:votesyncapp/vs_apis/student_api.dart';
 import 'package:votesyncapp/vs_constants/vs_constants.dart';
-import 'package:votesyncapp/vs_theme/vs_theme.dart';
 import 'package:votesyncapp/vs_widgets/election_dropdown_button_widget.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

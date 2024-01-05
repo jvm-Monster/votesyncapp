@@ -1,11 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:responsive_framework/max_width_box.dart';
 import 'package:responsive_framework/responsive_breakpoints.dart';
 import 'package:votesyncapp/stateproviders/election_state_notifier.dart';
 import 'package:votesyncapp/vs_models/election_model.dart';
-import 'package:votesyncapp/vs_screens/election_campaign_screen.dart';
 import 'package:votesyncapp/vs_screens/vote_screen.dart';
 
 import '../vs_constants/vs_constants.dart';
@@ -86,7 +83,7 @@ class _ElectionPostCardWidgetsState extends State<ElectionPostCardWidgets> {
                 ),
                 Row(
                   children: [
-                    Text("Candidates"),
+                    const Text("Candidates"),
                     SizedBox(
                       width: MediaQuery.of(context).size.width*0.05,
                     ),

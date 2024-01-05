@@ -1,4 +1,3 @@
-import 'dart:convert';
 
 import 'package:votesyncapp/vs_models/election_model.dart';
 

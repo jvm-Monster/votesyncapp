@@ -1,9 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:votesyncapp/vs_screens/election_categories_screen.dart';
 import 'package:votesyncapp/vs_screens/election_posts_screen.dart';
 import 'package:votesyncapp/vs_widgets/appbar_titile_widget.dart';
-import 'package:votesyncapp/vs_widgets/election_posts_card_widget.dart';
 
 import '../vs_constants/vs_constants.dart';
 import '../vs_screens/notification_screen.dart';

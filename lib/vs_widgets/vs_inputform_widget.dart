@@ -23,7 +23,7 @@ class VSInputFormWidget extends StatelessWidget {
 
         obscureText: obscurePassword,
         decoration: InputDecoration(
-            contentPadding: EdgeInsets.symmetric(vertical: 10.0), // Adjust the value as needed
+            contentPadding: const EdgeInsets.symmetric(vertical: 10.0), // Adjust the value as needed
 
             prefixIcon: prefixIcon,
 

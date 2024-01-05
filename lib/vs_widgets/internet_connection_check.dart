@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 
 class ConnectionCheck extends StatefulWidget {
-  const ConnectionCheck({Key? key}) : super(key: key);
+  const ConnectionCheck({super.key});
 
   @override
   _ConnectionCheckState createState() => _ConnectionCheckState();
@@ -19,14 +19,6 @@ class _ConnectionCheckState extends State<ConnectionCheck> {
     _connectivity = Connectivity();
 
 
-    var subscription = Connectivity().onConnectivityChanged.listen((ConnectivityResult result) {
-      // Got a new connectivity status!
-      if (result == ConnectivityResult.wifi) {
-        print("There is a connection");
-      }
-      // Handle connectivity changes
-      print("Connectivity Status: $result");
-    });
 
   }
 
@@ -40,7 +32,7 @@ class _ConnectionCheckState extends State<ConnectionCheck> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Connection Check'),
+        title: const Text('Connection Check'),
       ),
       body: Column(
         children: [
@@ -53,13 +45,13 @@ class _ConnectionCheckState extends State<ConnectionCheck> {
                 if (snapshot.hasData &&
                     (snapshot.data == ConnectivityResult.mobile ||
                         snapshot.data == ConnectivityResult.wifi)) {
-                  return Text("Internet Connection Available");
+                  return const Text("Internet Connection Available");
                 } else {
-                  return Text("No Internet Connection");
+                  return const Text("No Internet Connection");
                 }
               } else {
                 // Show a loading indicator or handle other states
-                return CircularProgressIndicator();
+                return const CircularProgressIndicator();
               }
             },
           ),

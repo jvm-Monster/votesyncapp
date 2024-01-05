@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:votesyncapp/vs_constants/vs_constants.dart';
 import 'package:votesyncapp/vs_widgets/appbar_titile_widget.dart';
@@ -50,8 +49,8 @@ class _ElectionCampaignScreenState extends State<ElectionCampaignScreen> {
                 Row(
                   children: [
                     Padding(
-                      padding: EdgeInsets.all(8.0),
-                      child: CircleAvatar(child:Image.asset(ongoingElectionImage), radius: 50),
+                      padding: const EdgeInsets.all(8.0),
+                      child: CircleAvatar(radius: 50, child:Image.asset(ongoingElectionImage)),
                     ),
                     SizedBox(
                       width: MediaQuery.of(context).size.width * 0.05,
@@ -91,7 +90,7 @@ class _ElectionCampaignScreenState extends State<ElectionCampaignScreen> {
               ],
             ),
 
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             Expanded(

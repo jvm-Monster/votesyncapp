@@ -2,7 +2,6 @@ import 'dart:convert';
 import 'package:votesyncapp/vs_apis/election_api.dart';
 import 'package:votesyncapp/vs_apis/urls.dart';
 import 'package:votesyncapp/vs_models/school_model.dart';
-import 'package:votesyncapp/vs_models/student_model.dart';
 import 'package:http/http.dart' as http;
 
 class SchoolApi {
@@ -16,7 +15,7 @@ class SchoolApi {
         headers: {
           'Content-Type': 'application/json',
         },
-      );
+      ).timeout(const Duration(minutes: 1));
 
       if (response.statusCode == 200) {
         // If the server returns a 200 OK response, parse the JSON
@@ -29,11 +28,13 @@ class SchoolApi {
       } else {
         // If the server did not return a 200 OK response,
         // throw an exception or handle the error as needed
-        throw Exception('Failed to load school data');
+        /*throw Exception('Failed to load school data');*/
+        return [];
       }
     } catch (error) {
       // Handle errors, e.g., network errors or timeouts
-      throw Exception('Failed to load school data');
+      /*throw Exception('Failed to load school data');*/
+      return [];
     }
   }
 

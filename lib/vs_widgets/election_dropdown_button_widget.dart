@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:votesyncapp/vs_models/school_model.dart';
 
 class AppDropDownButtonWidget extends StatefulWidget {
   final List<dynamic> listOptions;

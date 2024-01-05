@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:votesyncapp/main.dart';
@@ -167,31 +167,29 @@ class _VSAppDrawerState extends ConsumerState<VSAppDrawer> {
   }
 
   Widget disableNotification({required Text text,required Icon icon, required Function function,required bool v}){
-    return Container(
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            TextButton(
-              onPressed: () {
-                function();
-              },
-              style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(
-                      ref.watch(disableNotificationProvider)==v?vsPrimaryColor:null
-                  )
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  text,
-                  icon
-                ],
-              ),
-            )
-          ],
-        ),
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          TextButton(
+            onPressed: () {
+              function();
+            },
+            style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all(
+                    ref.watch(disableNotificationProvider)==v?vsPrimaryColor:null
+                )
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                text,
+                icon
+              ],
+            ),
+          )
+        ],
       ),
     );
   }
@@ -204,7 +202,7 @@ class _VSAppDrawerState extends ConsumerState<VSAppDrawer> {
         title: const Text("Write Your FeedBack Here",style: TextStyle(
             fontSize: vsBM
         ),),
-        content: TextField(
+        content: const TextField(
           style: TextStyle(
             fontSize: vsBS
           ),

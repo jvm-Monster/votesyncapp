@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 import 'package:responsive_framework/responsive_framework.dart';
@@ -33,12 +33,12 @@ class _VoteWidgetState extends State<VoteWidget> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     const CircleAvatar(
-                      child: Text("D"),
                       radius: 50,
+                      child: Text("D"),
                     ),
                     const Text("Diana Jerry"),
                     const Text("Software Development"),
-                    Text("100L"),
+                    const Text("100L"),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
@@ -49,7 +49,7 @@ class _VoteWidgetState extends State<VoteWidget> {
                             },
                             style: ButtonStyle(
                                 side: MaterialStateProperty.all(
-                                    BorderSide(color: vsAccentColor))),
+                                    const BorderSide(color: vsAccentColor))),
                             child: const Text(
                               "Campaign",
                               style: TextStyle(color: vsAccentColor),
@@ -126,7 +126,7 @@ class _VoteWidgetState extends State<VoteWidget> {
       layout:  ResponsiveBreakpoints.of(context).isDesktop?ResponsiveRowColumnType.ROW:ResponsiveRowColumnType.COLUMN,
       children: [
         ResponsiveRowColumnItem(
-            child:Container(
+            child:SizedBox(
            width: 10.w,
               child: Card(
                 child: Padding(
@@ -134,12 +134,12 @@ class _VoteWidgetState extends State<VoteWidget> {
                   child: Column(
                     children: [
                       const CircleAvatar(
-                        child: Text("D"),
                         radius: 50,
+                        child: Text("D"),
                       ),
                       const Text("Diana Jerry"),
                       const Text("Software Development"),
-                      Text("100L"),
+                      const Text("100L"),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -150,7 +150,7 @@ class _VoteWidgetState extends State<VoteWidget> {
                               },
                               style: ButtonStyle(
                                   side: MaterialStateProperty.all(
-                                      BorderSide(color: vsAccentColor))),
+                                      const BorderSide(color: vsAccentColor))),
                               child: const Text(
                                 "Campaign",
                                 style: TextStyle(color: vsAccentColor),
@@ -181,7 +181,7 @@ class _VoteWidgetState extends State<VoteWidget> {
 
         ),
         ResponsiveRowColumnItem(
-            child:Container(
+            child:SizedBox(
               width: 10.w,
               child: Card(
                 child: Padding(
@@ -189,12 +189,12 @@ class _VoteWidgetState extends State<VoteWidget> {
                   child: Column(
                     children: [
                       const CircleAvatar(
-                        child: Text("D"),
                         radius: 50,
+                        child: Text("D"),
                       ),
                       const Text("Diana Jerry"),
                       const Text("Software Development"),
-                      Text("100L"),
+                      const Text("100L"),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -205,7 +205,7 @@ class _VoteWidgetState extends State<VoteWidget> {
                               },
                               style: ButtonStyle(
                                   side: MaterialStateProperty.all(
-                                      BorderSide(color: vsAccentColor))),
+                                      const BorderSide(color: vsAccentColor))),
                               child: const Text(
                                 "Campaign",
                                 style: TextStyle(color: vsAccentColor),
@@ -236,7 +236,7 @@ class _VoteWidgetState extends State<VoteWidget> {
 
         ),
         ResponsiveRowColumnItem(
-            child:Container(
+            child:SizedBox(
               width: 10.w,
               child: Card(
                 child: Padding(
@@ -244,12 +244,12 @@ class _VoteWidgetState extends State<VoteWidget> {
                   child: Column(
                     children: [
                       const CircleAvatar(
-                        child: Text("D"),
                         radius: 50,
+                        child: Text("D"),
                       ),
                       const Text("Diana Jerry"),
                       const Text("Software Development"),
-                      Text("100L"),
+                      const Text("100L"),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -260,7 +260,7 @@ class _VoteWidgetState extends State<VoteWidget> {
                               },
                               style: ButtonStyle(
                                   side: MaterialStateProperty.all(
-                                      BorderSide(color: vsAccentColor))),
+                                      const BorderSide(color: vsAccentColor))),
                               child: const Text(
                                 "Campaign",
                                 style: TextStyle(color: vsAccentColor),

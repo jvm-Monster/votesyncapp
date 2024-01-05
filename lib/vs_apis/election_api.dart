@@ -5,7 +5,6 @@ import 'package:votesyncapp/vs_models/election_model.dart';
 
 class ElectionApi {
   static Future<List<Election>> getElections() async {
-    Uri apiUrl = Uri.parse('${host}elections?school=adeleke university');
     print("running");
 
     try {

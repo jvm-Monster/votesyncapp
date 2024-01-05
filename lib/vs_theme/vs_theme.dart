@@ -11,7 +11,7 @@ class VSTheme{
       textTheme: vsTextTheme,
       brightness: Brightness.light,
       useMaterial3: true,
-        cardTheme: CardTheme(
+        cardTheme: const CardTheme(
             color: Colors.white
         ),
         searchBarTheme: SearchBarThemeData(
@@ -31,7 +31,7 @@ class VSTheme{
                 ),
             )
         ),
-        dialogTheme: DialogTheme(
+        dialogTheme: const DialogTheme(
           backgroundColor: Colors.white,
           surfaceTintColor: Colors.transparent
         )

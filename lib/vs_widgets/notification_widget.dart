@@ -1,4 +1,3 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 import '../vs_constants/vs_constants.dart';
@@ -32,10 +31,10 @@ class _NotificationWidgetState extends State<NotificationWidget> {
           title: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text("Presidential",style: TextStyle(
+              const Text("Presidential",style: TextStyle(
                 fontSize: vsBM
               ),),
-              Text(s[index],style: TextStyle(
+              Text(s[index],style: const TextStyle(
                 fontSize: vsBS
               ),),
               const Icon(Icons.circle,color: Colors.green,),

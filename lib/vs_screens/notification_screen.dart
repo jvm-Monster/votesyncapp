@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:votesyncapp/vs_widgets/appbar_titile_widget.dart';
 import 'package:votesyncapp/vs_widgets/notification_widget.dart';

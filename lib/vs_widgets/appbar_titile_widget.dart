@@ -8,7 +8,7 @@ class AppBarTitleWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(title,style: TextStyle(
+    return Text(title,style: const TextStyle(
       fontSize: vsBM
     ),);
   }

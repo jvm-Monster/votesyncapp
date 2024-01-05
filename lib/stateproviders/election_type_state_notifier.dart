@@ -1,5 +1,4 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:votesyncapp/vs_models/election_model.dart';
 import 'package:votesyncapp/vs_models/election_type_model.dart';
 
 final electionTypeProvider = StateNotifierProvider<ElectionTypeNotifier, List<ElectionType>>((ref) => ElectionTypeNotifier());

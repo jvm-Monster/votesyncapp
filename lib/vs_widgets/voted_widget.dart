@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:votesyncapp/vs_constants/vs_constants.dart';
 
 class VotedWidget extends StatefulWidget {
   const VotedWidget({super.key});

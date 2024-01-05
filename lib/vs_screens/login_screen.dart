@@ -1,8 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:votesyncapp/vs_constants/vs_constants.dart';
 import 'package:votesyncapp/vs_screens/register_screen.dart';
-import 'package:votesyncapp/vs_widgets/responsive_scale_widget.dart';
 import 'package:votesyncapp/vs_widgets/vs_inputform_widget.dart';
 
 class LoginScreen extends StatefulWidget {
