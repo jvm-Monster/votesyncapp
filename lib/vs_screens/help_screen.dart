@@ -14,8 +14,7 @@ class HelpScreen extends StatefulWidget {
 class _HelpScreenState extends State<HelpScreen> {
   @override
   Widget build(BuildContext context) {
-    return ResponsiveScaleWidget(
-      screenToScaleWidget: Scaffold(
+    return Scaffold(
         appBar: AppBar(
           title: const AppBarTitleWidget(title: "Help"),
         ),
@@ -35,7 +34,6 @@ class _HelpScreenState extends State<HelpScreen> {
             Expanded(child: HelpWidget())
           ],
         ),
-      ),
     );
   }
 }

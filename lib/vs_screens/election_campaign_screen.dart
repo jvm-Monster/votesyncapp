@@ -13,8 +13,7 @@ class ElectionCampaignScreen extends StatefulWidget {
 class _ElectionCampaignScreenState extends State<ElectionCampaignScreen> {
   @override
   Widget build(BuildContext context) {
-    return ResponsiveScaleWidget(
-      screenToScaleWidget:Scaffold(
+    return Scaffold(
         appBar: AppBar(
           title: const AppBarTitleWidget(title: "Campaign Promises")
         ),
@@ -130,7 +129,6 @@ class _ElectionCampaignScreenState extends State<ElectionCampaignScreen> {
             )
           ],
         ),
-      ),
     );
   }
 }

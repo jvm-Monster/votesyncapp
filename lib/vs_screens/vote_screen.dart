@@ -3,10 +3,12 @@ import 'package:votesyncapp/vs_constants/vs_constants.dart';
 import 'package:votesyncapp/vs_widgets/appbar_titile_widget.dart';
 import 'package:votesyncapp/vs_widgets/responsive_scale_widget.dart';
 import 'package:votesyncapp/vs_widgets/vote_screen_widget.dart';
+import 'package:votesyncapp/vs_widgets/voting_widget.dart';
 import 'package:votesyncapp/vs_widgets/vs_searchbar_widget.dart';
 
 class VoteScreen extends StatefulWidget {
-  const VoteScreen({super.key});
+  final String screenTitle;
+  const VoteScreen({super.key,required this.screenTitle});
 
   @override
   State<VoteScreen> createState() => _VoteScreenState();
@@ -15,10 +17,9 @@ class VoteScreen extends StatefulWidget {
 class _VoteScreenState extends State<VoteScreen> {
   @override
   Widget build(BuildContext context) {
-    return ResponsiveScaleWidget(
-      screenToScaleWidget: Scaffold(
+     return Scaffold(
           appBar: AppBar(
-            title: const AppBarTitleWidget(title: "Ausa Presidential Election"),
+            title: AppBarTitleWidget(title: widget.screenTitle),
             automaticallyImplyLeading: true,
           ),
           body: const Column(
@@ -27,15 +28,15 @@ class _VoteScreenState extends State<VoteScreen> {
               VSSearchBarWidget(),
               Padding(
                 padding: EdgeInsets.all(8.0),
-                child: Text("Your vote is secure,\nYour vote counts",style: TextStyle(
+                child: Text("Vote securely,Your vote counts",style: TextStyle(
                   color: vsAccentColor,
                   fontSize: vsBL
                 ),),
               ),
-              Expanded(child: VoteWidget()),
+             /* Expanded(child: VoteWidget()),*/
+              Expanded(child: VotingWidget())
             ],
           )
-      ),
     );
   }
 }

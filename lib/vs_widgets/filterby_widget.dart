@@ -19,49 +19,43 @@ class _FilterByWidgetState extends ConsumerState<FilterByWidget> {
   Widget build(BuildContext context) {
     final filter=ref.watch(filterByProvider);
     filterBy = filter!;
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Row(
             children: [
-              const Text(
+              Text(
                 "Filter by:",
                 style: TextStyle(color: vsAccentColor),
               ),
-             AppDropDownButtonWidget(listOptions: listOptions,onValueChanged: (p0) {
 
-             },)
             ],
           ),
-        ),
+              Row(
+                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                 children: [
+                   filterByButton(
+                       buttonName: "Ongoing",
+                       function: () {
+                         StudentApi.getStudentModel();
+                       }),
+                   filterByButton(
+                       buttonName: "Pending",
+                       function: () {
+                         print("Pending");
+                       }),
+                   filterByButton(
+                       buttonName: "Concluded",
+                       function: () {
+                         print("Concluded");
+                       })
+                 ],
+               )
 
-
-
-            Row(
-               mainAxisAlignment: MainAxisAlignment.spaceAround,
-               children: [
-                 filterByButton(
-                     buttonName: "Ongoing",
-                     function: () {
-                       StudentApi.getStudentModel();
-                     }),
-                 filterByButton(
-                     buttonName: "Pending",
-                     function: () {
-                       print("Pending");
-                     }),
-                 filterByButton(
-                     buttonName: "Concluded",
-                     function: () {
-                       print("Concluded");
-                     })
-               ],
-             )
-
-      ],
+        ],
+      ),
     );
   }
 

@@ -6,7 +6,8 @@ import 'package:votesyncapp/vs_models/election_model.dart';
 import 'package:votesyncapp/vs_models/election_type_model.dart';
 
 class VSActivitiesStatus extends StatefulWidget {
-  const VSActivitiesStatus({super.key});
+  final String electionType;
+  const VSActivitiesStatus({super.key,required this.electionType});
 
   @override
   State<VSActivitiesStatus> createState() => _VSActivitiesStatusState();
@@ -18,6 +19,7 @@ class VSActivitiesStatus extends StatefulWidget {
     return Consumer(
       builder: (context, ref, child) {
         final va = ref.watch(electionTypeProvider);
+
         return GridView.builder(
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 1),
           itemCount: va.length,
@@ -71,7 +73,7 @@ class VSActivitiesStatus extends StatefulWidget {
                             children: [
                               TableCell(
                                 child: Text(
-                                  election.electionName,
+                                  election.electionName!,
                                   textAlign: TextAlign.left,
                                   style: const TextStyle(fontSize: 15),
                                 ),
@@ -85,7 +87,7 @@ class VSActivitiesStatus extends StatefulWidget {
                               ),
                               TableCell(
                                 child: Text(
-                                  election.electionStartDate,
+                                  election.electionStartDate!,
                                   style: const TextStyle(fontSize: 15),
                                 ),
                               ),

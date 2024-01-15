@@ -18,7 +18,6 @@ class _HelpWidgetState extends State<HelpWidget> {
       itemBuilder:(context, index) {
        return Column(
          children: [
-
            ListTile(
              subtitle: Text(faqs[index]),
            ),

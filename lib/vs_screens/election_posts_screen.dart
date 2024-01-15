@@ -4,6 +4,8 @@ import 'package:votesyncapp/vs_widgets/election_posts_card_widget.dart';
 import 'package:votesyncapp/vs_widgets/filterby_widget.dart';
 import 'package:votesyncapp/vs_widgets/responsive_scale_widget.dart';
 
+import '../vs_widgets/election_dropdown_button_widget.dart';
+
 class ElectionPostsScreen extends StatefulWidget {
   const ElectionPostsScreen({super.key});
 
@@ -16,30 +18,21 @@ class _ElectionPostsScreenState extends State<ElectionPostsScreen> {
   String defaultValue = "name";
   @override
   Widget build(BuildContext context) {
-    return ResponsiveScaleWidget(
-      screenToScaleWidget: Scaffold(
+
+     return Scaffold(
         appBar: AppBar(
           automaticallyImplyLeading: true,
           title: const AppBarTitleWidget(title: "Ausa Election Posts"),
-          actions: [
 
+        ),
+        body:Column(
+          children: [
+            FilterByWidget(),
+            SizedBox(height: 15,),
+            Expanded(child: ElectionPostCardWidgets())
 
           ],
-        ),
-        body:const Padding(
-          padding: EdgeInsets.all(8.0),
-          child: Column(
-            children: [
-              FilterByWidget(),
-
-
-              SizedBox(height: 15,),
-              Expanded(child: ElectionPostCardWidgets())
-
-            ],
-          ),
         )
-      ),
     );
   }
 }

@@ -13,13 +13,12 @@ class NotificationScreen extends StatefulWidget {
 class _NotificationScreenState extends State<NotificationScreen> {
   @override
   Widget build(BuildContext context) {
-    return ResponsiveScaleWidget(
-      screenToScaleWidget: Scaffold(
+   return Scaffold(
         appBar:AppBar(
           title:const AppBarTitleWidget(title: "Notifications") ,
         ),
         body: const NotificationWidget(),
-      ),
+
     );
   }
 }

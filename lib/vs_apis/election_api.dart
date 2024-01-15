@@ -5,11 +5,11 @@ import 'package:votesyncapp/vs_models/election_model.dart';
 
 class ElectionApi {
   static Future<List<Election>> getElections() async {
-    print("running");
+
 
     try {
       final response = await http.get(
-        Uri.parse('${host}elections?school=adeleke university'),
+        Uri.parse('${host}elections?school-id=AU&election-type=AUSA'),
         headers: {'Content-Type': contentType},
       );
 

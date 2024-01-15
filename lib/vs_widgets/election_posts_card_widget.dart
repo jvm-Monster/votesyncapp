@@ -17,7 +17,24 @@ class ElectionPostCardWidgets extends StatefulWidget {
 class _ElectionPostCardWidgetsState extends State<ElectionPostCardWidgets> {
   @override
   Widget build(BuildContext context) {
-    if(ResponsiveBreakpoints.of(context).largerOrEqualTo(DESKTOP)){
+
+    return  Consumer(
+
+      builder: (context, ref, child) {
+        final getElectionsData = ref.watch(electionListProvider);
+
+
+
+        return ListView.builder(
+          itemCount: getElectionsData.length,
+          itemBuilder: (context, index) {
+            return  cardData(getElectionsData[index]);
+          },
+        );
+      },
+
+    );
+   /* if(ResponsiveBreakpoints.of(context).largerOrEqualTo(DESKTOP)){
       return  Consumer(
         builder: (context, ref, child) {
           final getElectionsData = ref.watch(electionListProvider);
@@ -38,6 +55,10 @@ class _ElectionPostCardWidgetsState extends State<ElectionPostCardWidgets> {
 
         builder: (context, ref, child) {
           final getElectionsData = ref.watch(electionListProvider);
+          if(getElectionsData.isEmpty){
+            print('ok here sdfsd');
+            return Container();
+          }
          return ListView.builder(
           itemCount: getElectionsData.length,
           itemBuilder: (context, index) {
@@ -48,7 +69,7 @@ class _ElectionPostCardWidgetsState extends State<ElectionPostCardWidgets> {
          
       );
     }
-
+*/
 
 
   }
@@ -66,7 +87,7 @@ class _ElectionPostCardWidgetsState extends State<ElectionPostCardWidgets> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(election.electionName,style: const TextStyle(
+                    Text(election.electionName!,style: const TextStyle(
                         fontSize: vsTM,
                         fontWeight: FontWeight.bold
                     ),),
@@ -98,7 +119,7 @@ class _ElectionPostCardWidgetsState extends State<ElectionPostCardWidgets> {
               children: [
                 TextButton(
                     onPressed: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => const VoteScreen(),));
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const VoteScreen(screenTitle: "Ok",),));
                     },
                     style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all(

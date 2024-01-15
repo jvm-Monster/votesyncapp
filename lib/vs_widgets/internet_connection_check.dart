@@ -17,9 +17,6 @@ class _ConnectionCheckState extends State<ConnectionCheck> {
   void initState() {
     super.initState();
     _connectivity = Connectivity();
-
-
-
   }
 
   @override

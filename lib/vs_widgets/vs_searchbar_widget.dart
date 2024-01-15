@@ -38,11 +38,11 @@ class _VSSearchBarWidgetState extends State<VSSearchBarWidget> {
                 )
             ),
           ),
-          const SizedBox(height: 15,),
-          const Divider(
+
+         /* const Divider(
             color: vsAccentColor,
 
-          )
+          )*/
         ],
       ),
     );

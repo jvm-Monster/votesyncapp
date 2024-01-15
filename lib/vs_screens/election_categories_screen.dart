@@ -10,8 +10,8 @@ class ElectionCategoriesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ResponsiveScaleWidget(
-      screenToScaleWidget: Scaffold(
+
+     return Scaffold(
         appBar: AppBar(
           automaticallyImplyLeading: true,
           title: const AppBarTitleWidget(title: "Election Categories")
@@ -67,7 +67,6 @@ class ElectionCategoriesScreen extends StatelessWidget {
             ),
           ],
         ),
-      ),
     );
   }
 }

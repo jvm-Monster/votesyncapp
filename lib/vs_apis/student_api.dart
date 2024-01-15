@@ -9,7 +9,7 @@ import 'package:votesyncapp/vs_utils/api_status_codes.dart';
 class StudentApi{
   static Future<Map<String,dynamic>> getStudentModel() async {
     //API endpoint
-    const String apiUrl = "${host}students/220305";
+    const String apiUrl = "${host}students/220309";
 
     try {
       final response = await http.get(Uri.parse(apiUrl),
@@ -21,7 +21,6 @@ class StudentApi{
       if (response.statusCode == 200) {
         // If the server returns a 200 OK response, parse the JSON
         final Map<String, dynamic> data = json.decode(response.body);
-        print(await ElectionApi.getElections());
         return data; // Uses the fromJson method to convert the object to json
       } else {
         // If the server did not return a 200 OK response,

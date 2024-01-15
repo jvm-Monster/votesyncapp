@@ -226,6 +226,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
           _studentFullNameController.text,
           _studentEmailController.text,
           _studentPasswordController.text,
+          null,
           school,
         );
 
