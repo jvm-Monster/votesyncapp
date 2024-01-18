@@ -11,7 +11,7 @@ class VSAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: const AppBarTitleWidget(title: "Election Activities"),
+      title: const AppBarTitleWidget(title: "Activities"),
       leading: IconButton(
           color: vsPrimaryColor,
           onPressed: () {

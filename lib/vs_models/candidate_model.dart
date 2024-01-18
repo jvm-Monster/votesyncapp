@@ -37,4 +37,9 @@ class Candidate {
           : null, // Check for null in the JSON data
     );
   }
+
+  @override
+  String toString() {
+    return 'Candidate{candidateId: $candidateId, election: $election, student: $student}';
+  }
 }

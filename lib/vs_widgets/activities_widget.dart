@@ -5,7 +5,7 @@ import 'package:votesyncapp/stateproviders/candidate_state_provider.dart';
 import 'package:votesyncapp/stateproviders/election_state_notifier.dart';
 import 'package:votesyncapp/stateproviders/student_state_notifier.dart';
 import 'package:votesyncapp/vs_apis/candidate_api.dart';
-import 'package:votesyncapp/vs_apis/election_type_api.dart';
+
 import 'package:intl/intl.dart';
 import 'package:votesyncapp/vs_apis/vote_api.dart';
 import 'package:votesyncapp/vs_constants/vs_constants.dart';
@@ -13,8 +13,7 @@ import 'package:votesyncapp/vs_screens/vote_screen.dart';
 
 import '../stateproviders/election_type_state_notifier.dart';
 import '../vs_models/candidate_model.dart';
-import '../vs_models/election_model.dart';
-import '../vs_models/election_type_model.dart';
+
 
 class ElectionActivityStatuses extends ConsumerStatefulWidget {
   final String electionType;
@@ -33,7 +32,7 @@ class _ElectionActivityStatusesState extends ConsumerState<ElectionActivityStatu
 
   getStudentVotesApi(String studentId,String schoolId,String electionType,String electionName)async{
      Map votes = await VoteApi.getStudentVotes(studentId, schoolId,electionType,electionName);
-        ref.read(studentVotesProvider.notifier).update((state) => votes!);
+        ref.read(studentVotesProvider.notifier).update((state) => votes);
      }
   @override
   void initState() {
@@ -52,6 +51,7 @@ class _ElectionActivityStatusesState extends ConsumerState<ElectionActivityStatu
             return Container();
           }
           return SingleChildScrollView(
+            physics: const AlwaysScrollableScrollPhysics(),
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Column(

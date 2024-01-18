@@ -26,4 +26,5 @@ class School{
   String toString() {
     return ' $schoolId - $schoolName - $state';
   }
+
 }

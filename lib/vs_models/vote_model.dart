@@ -48,4 +48,9 @@ class Vote {
       json['election'] != null ? Election.fromJson(json['election']) : null,
     );
   }
+
+  @override
+  String toString() {
+    return 'Vote{voteId: $voteId, voted: $voted, student: $student, school: $school, candidate: $candidate, election: $election}';
+  }
 }

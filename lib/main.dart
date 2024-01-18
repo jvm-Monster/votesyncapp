@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:responsive_framework/breakpoint.dart';
 import 'package:responsive_framework/responsive_breakpoints.dart';
-import 'package:votesyncapp/stateproviders/election_state_notifier.dart';
 import 'package:votesyncapp/stateproviders/election_type_state_notifier.dart';
 import 'package:votesyncapp/stateproviders/loading_state_provider.dart';
 import 'package:votesyncapp/stateproviders/student_state_notifier.dart';
@@ -13,8 +12,6 @@ import 'package:votesyncapp/vs_apis/student_api.dart';
 import 'package:votesyncapp/vs_models/election_model.dart';
 import 'package:votesyncapp/vs_models/student_model.dart';
 import 'package:votesyncapp/vs_screens/home_screen.dart';
-import 'package:votesyncapp/vs_screens/login_screen.dart';
-import 'package:votesyncapp/vs_screens/splash_screen.dart';
 import 'package:votesyncapp/vs_theme/vs_theme.dart';
 import 'package:sizer/sizer.dart';
 import 'package:votesyncapp/vs_widgets/network_display_widget.dart';
@@ -27,23 +24,23 @@ final themeModeProvider = StateProvider<bool?>((ref) => false);
 final disableNotificationProvider = StateProvider<bool?>((ref) => false);
 final filterByProvider = StateProvider<String?>((ref) => "");
 
-/*void main() async{
+void main() async{
 
   runApp(
     const ProviderScope(
       child: MyApp(),
     ),
   );
-} */
+}
 
-void main() => runApp(
+/*void main() => runApp(
       ProviderScope(
         child: DevicePreview(
           enabled: true,
           builder: (context) => const MyApp(), // Wrap your app
         ),
       ),
-    );
+    );*/
 
 class MyApp extends ConsumerStatefulWidget {
   const MyApp({super.key});
@@ -86,7 +83,6 @@ class _MyAppState extends ConsumerState<MyApp> {
   loadAllDataNeeded() async {
     try {
       Student student = Student.fromJson(await StudentApi.getStudentModel());
-      List<Election> elections = await ElectionApi.getElections();
       List<String> electionTypes = await ElectionTypeApi.getElectionTypes();
       ref
           .read(studentProvider.notifier)
@@ -112,4 +108,18 @@ class _MyAppState extends ConsumerState<MyApp> {
 
 
 /*
-colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),*/
+colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+
+data needed at app startup
+
+first we need to show the loading screen
+while showing it we want to know if they enable auto login,
+second if its enable we want to automatically log them in,
+if not they need to input their gmail and password again,
+
+then base on the credentials we can show data,
+once everything works effectively then i would introduce caching,
+so that when the app makes a request, not everytime the server or
+database has to give it back, if the data is not yet changed
+
+*/

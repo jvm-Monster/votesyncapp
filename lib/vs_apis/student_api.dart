@@ -9,7 +9,7 @@ import 'package:votesyncapp/vs_utils/api_status_codes.dart';
 class StudentApi{
   static Future<Map<String,dynamic>> getStudentModel() async {
     //API endpoint
-    const String apiUrl = "${host}students/220309";
+    const String apiUrl = "${host}students/220305";
 
     try {
       final response = await http.get(Uri.parse(apiUrl),

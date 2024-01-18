@@ -46,4 +46,9 @@ class Student {
           : null, // Ensure to handle null school in JSON
     );
   }
+
+  @override
+  String toString() {
+    return 'Student{studentId: $studentId, studentName: $studentName, studentEmail: $studentEmail, studentPassword: $studentPassword, studentLevel: $studentLevel, school: $school}';
+  }
 }

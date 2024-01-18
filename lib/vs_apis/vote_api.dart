@@ -21,8 +21,6 @@ class VoteApi {
       if (response.statusCode == 200) {
         // If the server returns a 200 OK response, parse the JSON
         final Map data = json.decode(response.body);
-        print(data);
-        print("Printing object heree");
         return data; // Uses the fromJson method to convert the object to json
       } else {
         // If the server did not return a 200 OK response,
@@ -38,7 +36,7 @@ class VoteApi {
   }
 
   static Future<bool> voteCandidate(Vote vote) async {
-
+    print(vote);
     String apiUrl = "${host}votes/";
     final data = jsonEncode({
       "voteId":vote.voteId,

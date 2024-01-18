@@ -15,7 +15,7 @@ class _VotedWidgetState extends State<VotedWidget> {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: Text(widget.title),
+      title: Text(widget.title,style: const TextStyle(fontSize: vsBM),),
       content: Image.asset(
         widget.voteSuccessImage
       ),

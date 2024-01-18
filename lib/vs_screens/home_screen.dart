@@ -39,31 +39,31 @@ class _HomeScreenState extends State<HomeScreen> {
   String? electionType;
   @override
   Widget build(BuildContext context) {
-    return RefreshIndicator(
-      onRefresh: () {
-        return Future(() => "print");
-      },
-      triggerMode: RefreshIndicatorTriggerMode.onEdge,
-      edgeOffset: 20,
-      displacement: 200,
-      strokeWidth: 5,
-      color: Colors.yellow,
-      child: Scaffold(
-          key: keyState,
-          appBar: const PreferredSize(
-            preferredSize: Size.fromHeight(50),
-            child: VSAppBar(),
-          ),
-          body: Consumer(
-            builder: (context, ref, child) {
-              final val = ref.watch(electionTypeStateProvider);
-              return Column(
+    return Scaffold(
+        key: keyState,
+        appBar: const PreferredSize(
+          preferredSize: Size.fromHeight(50),
+          child: VSAppBar(),
+        ),
+        body: Consumer(
+          builder: (context, ref, child) {
+            final val = ref.watch(electionTypeStateProvider);
+            return RefreshIndicator(
+              onRefresh: () async{
+                await refreshData(ref);
+              },
+              triggerMode: RefreshIndicatorTriggerMode.onEdge,
+              edgeOffset: 50,
+              displacement: 75,
+              strokeWidth: 5,
+              color: vsPrimaryColor,
+              child: Column(
                 children: [
                   Padding(
                     padding: EdgeInsets.all(8.0),
                     child: Column(
                       children: [
-                        // const VSSearchBarWidget(),
+
                         const GreetingWidget(),
                         AppDropDownButtonWidget(
                           listOptions: val,
@@ -74,21 +74,23 @@ class _HomeScreenState extends State<HomeScreen> {
                       ],
                     ),
                   ),
-                  SizedBox(height: 15),
-                  val.isEmpty?ElevatedButton(
-                    onPressed: (){
-                      refreshData(ref);
-                  }, child: const Text("refresh"),):
+                  const SizedBox(height: 15),
+                  val.isEmpty?const Column(
+                    children: [
+                      Icon(Icons.refresh),
+                      Text("Please refresh")
+                    ],
+                  ):
                   Expanded(
                     child: ElectionActivityStatuses(
                         electionType: electionType ?? 'AUSA'),
                   ),
                 ],
-              );
-            },
-          ),
-          drawer: const VSAppDrawer()),
-    );
+              ),
+            );
+          },
+        ),
+        drawer: const VSAppDrawer());
   }
 
   refreshData(WidgetRef ref)async{

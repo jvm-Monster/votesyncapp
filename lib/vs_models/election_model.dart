@@ -42,5 +42,10 @@ class Election {
       electionStatus: json['electionStatus'], // Ensure to get electionStatus from JSON
     );
   }
+
+  @override
+  String toString() {
+    return 'Election{electionEndDate: $electionEndDate, electionId: $electionId, electionName: $electionName, electionStartDate: $electionStartDate, electionType: $electionType, electionStatus: $electionStatus}';
+  }
 }
 
